@@ -1,0 +1,65 @@
+<!--
+  File name:      services.ejs
+  Student’s Name: LAU, Wai Yung
+  Student ID:     301269737
+  Date:           28 Sept 2022
+-->
+
+<br>
+<h4 class="display-8 navbar-text"><p>
+Here list the services I will provide:</p>
+</h4>
+
+<% if (tab == "General Programming") { %>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/services"><i class="fas fa-lg fa-solid fa-pen-nib"></i><h5 class="display-8 navbar-text"><b> <%= tab %></b></h5></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services_w"><i class="fas fa-lg fa-solid fa-globe"></i><h5 class="display-8 navbar-text"> Web Development</h5></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services_g"><i class="fas fa-lg fa-regular fa-file-image"></i><h5 class="display-8 navbar-text"> Graphic Design</h5></a>
+          </li>
+      </ul>
+<%- include('services_p.ejs') %>
+<% } else if (tab == "Web Development") {  %>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/services"><i class="fas fa-lg fa-solid fa-pen-nib"></i><h5 class="display-8 navbar-text">General Programming</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/services_w"><i class="fas fa-lg fa-solid fa-globe"></i><h5 class="display-8 navbar-text"><b><%= tab %></b></h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services_g"><i class="fas fa-lg fa-regular fa-file-image"></i><h5 class="display-8 navbar-text">Graphic Design</h5></a>
+        </li>
+      </ul>
+<%- include('services_w.ejs') %>
+<% } else if (tab == "Graphic Design") {  %>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/services"><i class="fas fa-lg fa-solid fa-pen-nib"></i><h5 class="display-8 navbar-text">General Programming</h5></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services_w"><i class="fas fa-lg fa-solid fa-globe"></i><h5 class="display-8 navbar-text">Web Development</h5></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/services_g"><i class="fas fa-lg fa-regular fa-file-image"></i><h5 class="display-8 navbar-text"><b><%= tab %></b></h5></a>
+          </li>
+      </ul>
+<%- include('services_g.ejs') %>
+<% } %>
+
+<!--
+<div class="col-md-6">
+  <div class="h-100 p-5 bg-light border rounded-3">
+    <h5 class="display-8 navbar-text">General Programming</h5>
+  </div>
+</div>
+
+<h4 class="display-8 navbar-text">
+<a class="nav-link active" href="/home"><i class="fa-lg fa-solid fa-house-chimney-user"></i> General Programming</a>
+</h4>
+-->
+<br>

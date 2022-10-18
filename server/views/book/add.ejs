@@ -1,0 +1,71 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<!-- Content  for the add page -->
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%=title %></h1>
+
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="firstnameTextField">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstnameTextField"
+            placeholder="Enter the First Name:"
+            name="first_name"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="lastnameTextField">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastnameTextField"
+            placeholder="Enter the Last Name:"
+            name="last_name"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="contactnoTextField">Contact Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contactnoTextField"
+            placeholder="Enter the Contact Number:"
+            name="contact_number"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="emailTextField">Email address:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emailTextField"
+            placeholder="Enter the Email Address:"
+            name="email"
+            required
+          />
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+
+        <a href="/book-list" class="btn btn-warning">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

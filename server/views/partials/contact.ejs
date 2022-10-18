@@ -1,0 +1,60 @@
+<!--
+  File name:      contact.ejs
+  Student’s Name: LAU, Wai Yung
+  Student ID:     301269737
+  Date:           28 Sept 2022
+-->
+<br>
+<table>
+  <tr>
+    <td width="20%">
+      <div class="contact" style="width: 21rem;">
+        <img src="/Assets/images/call.PNG" class="card-img-top" alt="contact">
+        <div class="card-body">
+            <h5 class="display-6 navbar-text">Contact Me</h5>
+            <p class="card-text"><h6 class="display-8 navbar-text">You can contact me by the following:</h6></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fas fa-lg fa-mobile-alt"></i> Mobile: +1-666-333-8888</li>
+            <li class="list-group-item"><i class="fas fa-lg fa-regular fa-envelope"></i> Email: <a href="mailto:wlau75@my.centennialcollege.ca">wlau75@my.centennialcollege.ca</a></li>
+            <li class="list-group-item"><i class="fab fa-lg fa-brands fa-whatsapp"></i> Whatsapp: +1-666-333-8888</li>
+          </ul>
+      </div>
+      </td>
+      <td width="5%"></td>
+      <td>
+  <!--
+    First Name, Last Name, Contact Number, Email Address, Message
+  -->
+  <h6 class="display-8 navbar-text">You are also welcome to leave me your contact and message.  I will contact you back.</h6>
+  <form action="/users" method="post">
+    <div class="form-floating mb-3">
+      <input type="firstname" class="form-control" name="firstName" id="firstName" placeholder="First">
+      <label for="floatingInput">First Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="lastname" class="form-control" name="lastName" id="lastName" placeholder="Last">
+      <label for="floatingInput">Last Name</label>
+    </div>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="mobile" class="form-control" name="mobile" id="mobile" placeholder="1234567890">
+      <label for="floatingInput">Contact Number</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="Leave your message here" name="message" id="message" style="height: 120px"></textarea>
+      <label for="floatingTextarea">Message</label>
+    </div><br><br>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+      <!--<input type="submit" value="Submit" />-->
+    </div>
+  </form>
+      </td>
+  </tr>
+</table>
