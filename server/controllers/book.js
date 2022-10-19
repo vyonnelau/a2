@@ -16,7 +16,11 @@ module.exports.displayBookList = (req, res, next) => {
       console.log(bookList);
 
       //res.render("book/list", { title: "Books", BookList: bookList });
-      res.render("book/list", { title: "Business Contact", BookList: bookList });
+      res.render("book/list", { 
+        title: "Business Contact", 
+        BookList: bookList,
+        displayName: req.user ? req.user.displayName : "",
+      });
       //render book.ejs and pass title and Booklist variable we are passing bookList object to BookList property
     }
   });
@@ -56,7 +60,11 @@ module.exports.displayeditpage = (req, res, next) => {
       res.end(err);
     } else {
       //show the edit view
-      res.render("book/edit", { title: "Update Business Contact", book: booktoedit });
+      res.render("book/edit", { 
+        title: "Update Business Contact", 
+        book: booktoedit,
+        displayName: req.user ? req.user.displayName : "",
+      });
     }
   });
 };

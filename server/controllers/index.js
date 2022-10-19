@@ -8,39 +8,70 @@ let userModel = require("../models/user");
 let User = userModel.User; //alias
 
 module.exports.displayHomepage = (req, res, next) => {
-  res.render("index", { title: "Home" });
+  res.render("index", {
+    title: "Home",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayaboutpage = (req, res, next) => {
-  res.render("index", { title: "About Me" });
+  res.render("index", {
+    title: "About Me",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayproductpage = (req, res, next) => {
-  res.render("index", { title: "Products" });
+  res.render("index", {
+    title: "Products",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayproductpage = (req, res, next) => {
-  res.render("index", { title: "Projects" });
+  res.render("index", {
+    title: "Projects",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayservicespage = (req, res, next) => {
-  res.render("index", { title: "Services", tab: "General Programming" });
+  res.render("index", {
+    title: "Services",
+    displayName: req.user ? req.user.displayName : "",
+    tab: "General Programming"
+  });
 };
 
 module.exports.displayservicesppage = (req, res, next) => {
-  res.render("index", { title: 'Services', tab: "General Programming" });
+  rres.render("index", {
+    title: "Services",
+    displayName: req.user ? req.user.displayName : "",
+    tab: "General Programming"
+  });
 };
 
 module.exports.displayserviceswpage = (req, res, next) => {
-  res.render("index", { title: 'Services', tab: "Web Development" });
+  rres.render("index", {
+    title: "Services",
+    displayName: req.user ? req.user.displayName : "",
+    tab: "Web Development"
+  });
 };
 
 module.exports.displayservicesgpage = (req, res, next) => {
-  res.render("index", { title: 'Services', tab: "Graphic Design" });
+  res.render("index", {
+    title: "Services",
+    displayName: req.user ? req.user.displayName : "",
+    tab: "Graphic Design"
+  });
 };
 
 module.exports.displayContactpage = (req, res, next) => {
-  res.render("index", { title: "Contact Me" });
+  res.render("index", {
+    title: "Contact Me",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -58,15 +89,12 @@ module.exports.displayLoginPage = (req, res, next) => {
 
 module.exports.processLoginPage = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
-    // server err?
-    console.log("In Authentication process!!!")
+    
     if (err) {
-      console.log("process login page error!!")
       return next(err);
     }
     // is there a user login error?
     if (!user) {
-      console.log("In Authentication ERROR!!!")
       req.flash("loginMessage", "Authentication Error");
       return res.redirect("/login");
     }
@@ -130,6 +158,10 @@ module.exports.processRegisterPage = (req, res, next) => {
 };
 
 module.exports.performLogout = (req, res, next) => {
-  req.logout();
-  res.redirect("/");
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
 };
