@@ -18,7 +18,6 @@ let bookController = require("../controllers/book");
 
 // helper function for guard purposes
 function requireAuth(req, res, next) {
-  console.log("============================REQUIRE AUTHENTICATION========================")
   // check if the user is logged in
   if (!req.isAuthenticated()) {
     return res.redirect("/login");
@@ -27,8 +26,8 @@ function requireAuth(req, res, next) {
 }
 
 /* GET Route for the Book List page - READ Operation */
-router.get("/", bookController.displayBookList);
-//router.get("/", requireAuth, bookController.displayBookList);
+//router.get("/", bookController.displayBookList);
+router.get("/", requireAuth, bookController.displayBookList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
 router.get("/add", requireAuth, bookController.addpage);
