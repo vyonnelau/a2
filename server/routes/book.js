@@ -18,6 +18,7 @@ let bookController = require("../controllers/book");
 
 // helper function for guard purposes
 function requireAuth(req, res, next) {
+  console.log("============================REQUIRE AUTHENTICATION========================")
   // check if the user is logged in
   if (!req.isAuthenticated()) {
     return res.redirect("/login");
