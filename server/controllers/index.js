@@ -83,8 +83,8 @@ module.exports.displayContactpage = (req, res, next) => {
 
 module.exports.displayLoginPage = (req, res, next) => {
   // check if the user is already logged in
-  console.log("======================== DISPLAY LOGIN PAGE =============================")
   if (!req.user) {
+    console.log("======================== DISPLAY LOGIN PAGE =============================")
     res.render("auth/login", {
       title: "Login",
       messages: req.flash("loginMessage"),
