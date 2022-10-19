@@ -1,3 +1,10 @@
+/*
+  File name:      user.js
+  Student’s Name: LAU, Wai Yung
+  Student ID:     301269737
+  Date:           18 Oct 2022
+*/
+
 // require modules for the User Model
 let mongoose = require("mongoose");
 let passportLocalMongoose = require("passport-local-mongoose");
