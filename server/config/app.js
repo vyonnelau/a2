@@ -1,3 +1,13 @@
+/////////////////////////////////////////////
+//
+//  File Name:      /server/config/app.js
+//  Author:         Lau, Wai Yung
+//  Student ID:     301269737
+//  Date:           29 Oct 2022
+//  Web app name:   https://vyonne.herokuapp.com/
+//
+/////////////////////////////////////////////
+
 // installed 3rd party packages
 let createError = require("http-errors");
 let express = require("express");
